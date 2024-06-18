@@ -10,7 +10,7 @@ const WeatherInfo = ({ weatherData }) => {
       <Text style={[styles.temperature, styles.marginTop20]}>{main.temp}°C</Text>
       <View style={[styles.rowContainer, styles.marginTop20]}>
         <Image
-          source={{ uri: 'https://openweathermap.org/img/w/${weather[0].icon}.png' }} //belum
+          source={{ uri: 'https://openweathermap.org/img/w/{weather[0].icon}.png' }}
           style={styles.weatherIcon}
         />
         <Text style={[styles.text, styles.bold]}>{weather[0].main}</Text>
