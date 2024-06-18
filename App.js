@@ -26,6 +26,9 @@ const App = () => {
     const transformedData = { ...data };
     transformedData.visibility = (transformedData.visibility / 1000).toFixed(2);
     transformedData.main.temp = (transformedData.main.temp - 273.15).toFixed(2);
+    transformedData.main.feels_like = (transformedData.main.feels_like - 273.15).toFixed(2);
+    transformedData.main.temp_min = (transformedData.main.temp_min - 273.15).toFixed(2);
+    transformedData.main.temp_max = (transformedData.main.temp_max - 273.15).toFixed(2);
     return transformedData;
   };
 

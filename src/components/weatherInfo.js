@@ -7,6 +7,7 @@ const WeatherInfo = ({ weatherData }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>The weather of {name}</Text>
+      <Text style={styles.text}>Feels like {main.feels_like}°C</Text>
       <Text style={styles.temperature}>{main.temp}°C</Text>
       <View style={styles.rowContainer}>
         <Image
@@ -18,6 +19,8 @@ const WeatherInfo = ({ weatherData }) => {
       <Text style={styles.text}>{weather[0].description}</Text>
       <DataRow label="Visibility :" value={`${visibility} km`} />
       <DataRow label="Wind Speed :" value={`${wind.speed} m/s`} />
+      <DataRow label="Min Temperature :" value={`${main.temp_min}°C`} />
+      <DataRow label="Max Temperature :" value={`${main.temp_max}°C`} />
     </View>
   );
 };
