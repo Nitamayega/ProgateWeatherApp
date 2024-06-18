@@ -1,13 +1,7 @@
-import React from 'react'
-import { TextInput, StyleSheet, View } from 'react-native'
+import React from 'react';
+import { TextInput, StyleSheet, View } from 'react-native';
 
-const CustomTextInput = ({
-  text,
-  onChange,
-  multiline = false,
-  placeholder,
-  numberOfLines,
-}) => (
+const CustomTextInput = ({ text, onChange, multiline, placeholder, numberOfLines }) => (
   <View style={styles.container}>
     <TextInput
       multiline={multiline}
@@ -15,10 +9,10 @@ const CustomTextInput = ({
       style={styles.input}
       placeholder={placeholder}
       onChangeText={onChange}
-      defaultValue={text}
+      value={text} // Menggunakan 'value' daripada 'defaultValue'
     />
   </View>
-)
+);
 
 const styles = StyleSheet.create({
   input: {
@@ -29,6 +23,11 @@ const styles = StyleSheet.create({
   container: {
     marginTop: 20,
   },
-})
+});
 
-export default CustomTextInput
+CustomTextInput.defaultProps = {
+  multiline: false,
+  numberOfLines: 1,
+};
+
+export default CustomTextInput;
